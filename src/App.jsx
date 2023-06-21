@@ -151,31 +151,40 @@ function App() {
       return; // Si el juego no está en curso, no hagas nada
     }
 
-    // Resto de tu lógica para determinar al ganador
-    if (showRock && showScissorsComputer ||
+    if (
+      showRock && showScissorsComputer ||
+      showRock && showLizardComputer ||
+      showLizard && showSpockComputer ||
+      showLizard && showPaperComputer ||
+      showSpock && showScissorsComputer ||
+      showSpock && showRockComputer ||
       showScissors && showPaperComputer ||
-      showPaper && showRockComputer) {
-      userWin();
-
+      showScissors && showLizardComputer ||
+      showPaper && showRockComputer ||
+      showPaper && showSpockComputer
+    ) {
+      userWin()
       setTimeout(() => {
         setAuraLeft(true);
-
       }, 2000);
-    } else if (showRockComputer && showScissors ||
+    } else if (
+      showRockComputer && showScissors ||
+      showRockComputer && showLizard ||
+      showLizardComputer && showSpock ||
+      showLizardComputer && showPaper ||
+      showSpockComputer && showScissors ||
+      showSpockComputer && showRock ||
       showScissorsComputer && showPaper ||
-      showPaperComputer && showRock) {
-      computerWin();
-
+      showScissorsComputer && showLizard ||
+      showPaperComputer && showRock ||
+      showPaperComputer && showSpock
+    ) {
+      computerWin()
       setTimeout(() => {
         setAuraRight(true);
-
       }, 2000);
-
-
-
-
     } else {
-      tie();
+      tie()
     }
   }
 
@@ -234,7 +243,7 @@ function App() {
 
 
         {/* //////////////////////////GAME START//////////////////////////// */}
-        <div className={`pt-[120px] relative ${firstStep ? '' : 'hidden'}`}>
+        <div className={`lg:pt-[120px] pt-[150px] relative ${firstStep ? '' : 'hidden'}`}>
 
           {/* ///////////////////TRIANGLE BASE/////////////////// */}
           <TriangleBase />
