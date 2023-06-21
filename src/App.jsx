@@ -39,8 +39,6 @@ function App() {
   const [auraRight, setAuraRight] = useState(false)
   const [auraLeft, setAuraLeft] = useState(false)
 
-  console.log('selected weapon', selectedWeapon);
-
   function playAgain() {
     setSelectedWeapon('')
     setFirstStep(true)
@@ -198,7 +196,6 @@ function App() {
       setThirdStep(true)
       setResultTie(true)
     }, 1000);
-    console.log('empate');
   }
 
   function resetCount() {
