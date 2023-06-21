@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+
+
+
+:root {
+    /* ### Primary */
+    --Scissors-Gradient: hsl(39, 89%, 49%) to hsl(40, 84%, 53%);
+    --Paper-Gradient: hsl(230, 89%, 62%) to hsl(230, 89%, 65%);
+    --Rock-Gradient: hsl(349, 71%, 52%) to hsl(349, 70%, 56%);
+    --Lizard-Gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%);
+    --Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%);
+    --scoreBg: #fafafa;
+
+    /*  ### Neutral */
+    --Dark-Text: hsl(229, 25%, 31%);
+    --Score-Text: hsl(229, 64%, 46%);
+    --Header-Outline: hsl(217, 16%, 45%);
+    --textScore: #57556a;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.specialShadow {
+    box-shadow: 0 0 0 100vmax rgba(15, 14, 22, 0.645);
+}
+
+
+.bgBlue {
+    background: rgba(23, 23, 56, 0.389);
+}
+
+
+
+.colorOne {
+    background-color: rgb(42, 51, 82);
+}
+
+.colorTwo {
+    background-color: rgb(36, 47, 79);
+
+}
+
+.colorThree {
+    background-color: rgb(30, 41, 73);
+}
+
+
+/* //////////////auraSistem//////////////// */
+
+.aura-1 {
+    animation: showAura 1s linear 1s forwards 3;
+    animation-delay: 0s;
+}
+
+.aura-2 {
+    animation: showAura 1s linear 0s forwards 3;
+    animation-delay: 0s;
+
+
+}
+
+.aura-3 {
+    animation: showAura 1s linear 0s forwards 3;
+    animation-delay: 0s;
+
+
+}
+
+
+@keyframes showAura {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+
+@layer base {
+    html {
+        background: radial-gradient(circle at center, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+        font-family: 'Barlow Semi Condensed', sans-serif;
+    }
+}
+
+@media (max-width: 1024px) {
+    .disabled {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .moving-elementL {
+        animation: moveLeft 1s linear 1 forwards;
+        transform-origin: center center;
+    }
+
+    .moving-elementR {
+        animation: moveRight 1s linear 1 forwards;
+    }
+
+    @keyframes moveLeft {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-140px);
+        }
+    }
+
+    @keyframes moveRight {
+        0% {
+            right: 0;
+        }
+
+        100% {
+            right: -130px;
+        }
+    }
+
+
+}
