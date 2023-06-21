@@ -22,6 +22,12 @@ export default {
         'RockB': "hsl(349, 70%, 56%)",
 
 
+        'SpockA': "rgb(42,144,174)",
+        'SpockB': "rgb(78,192,210)",
+        
+        'LizardA': "rgb(96,55,171)",
+        'LizardB': "rgb(141,93,231)",
+
         'bgCard': "#ededef",
         'grayShadow': "#b8bfd2",
 

@@ -8,6 +8,11 @@ import ScissorsWeaponBig from './components/ScissorsWeaponBig'
 import PaperWeaponBig from './components/PaperWeaponBig'
 import RockWeaponBig from './components/RockWeaponBig'
 import Rules from './components/Rules'
+import SpockWeapon from './components/SpockWeapon'
+import SpockWeaponBig from './components/SpockWeaponBig'
+import LizardWeapon from './components/LizardWeapon'
+import LizardWeaponBig from './components/LizardWeaponBig'
+
 
 function App() {
   const [score, setScore] = useState(0)
@@ -23,10 +28,14 @@ function App() {
   const [showPaper, setShowPaper] = useState(false)
   const [showScissors, setShowScissors] = useState(false)
   const [showRock, setShowRock] = useState(false)
+  const [showSpock, setShowSpock] = useState(false)
+  const [showLizard, setShowLizard] = useState(false)
 
   const [showPaperComputer, setShowPaperComputer] = useState(false)
   const [showScissorsComputer, setShowScissorsComputer] = useState(false)
   const [showRockComputer, setShowRockComputer] = useState(false)
+  const [showSpockComputer, setShowSpockComputer] = useState(false)
+  const [showLizardComputer, setShowLizardComputer] = useState(false)
 
   const [userWinner, setUserWinner] = useState(false)
   const [computerWinner, setComputerWinner] = useState(false)
@@ -36,6 +45,8 @@ function App() {
 
   const [auraRight, setAuraRight] = useState(false)
   const [auraLeft, setAuraLeft] = useState(false)
+
+  console.log('selected weapon', selectedWeapon);
 
   function playAgain() {
     setSelectedWeapon('')
@@ -47,10 +58,14 @@ function App() {
     setShowPaper(false)
     setShowScissors(false)
     setShowRock(false)
+    setShowSpock(false)
+    setShowLizard(false)
 
-    setShowPaperComputer()
-    setShowScissorsComputer()
-    setShowRockComputer()
+    setShowPaperComputer(false)
+    setShowScissorsComputer(false)
+    setShowRockComputer(false)
+    setShowSpockComputer(false)
+    setShowLizardComputer(false)
 
     setUserWinner(false)
     setComputerWinner(false)
@@ -86,6 +101,12 @@ function App() {
     if (selectedWeapon === 'Rock') {
       setShowRock(true)
     }
+    if (selectedWeapon === 'Spock') {
+      setShowSpock(true)
+    }
+    if (selectedWeapon === 'Lizard') {
+      setShowLizard(true)
+    }
 
   }
 
@@ -111,9 +132,13 @@ function App() {
     showRock,
     showScissors,
     showPaper,
+    showSpock,
+    showLizard,
     showScissorsComputer,
     showPaperComputer,
     showRockComputer,
+    showSpockComputer,
+    showLizardComputer
   ]);
 
 
@@ -205,7 +230,7 @@ function App() {
 
 
         {/* //////////////////////////GAME START//////////////////////////// */}
-        <div className={`pt-[10rem] relative ${firstStep ? '' : 'hidden'}`}>
+        <div className={`pt-[120px] relative ${firstStep ? '' : 'hidden'}`}>
 
           {/* ///////////////////TRIANGLE BASE/////////////////// */}
           <TriangleBase />
@@ -223,6 +248,14 @@ function App() {
           {/* /////////////////////ROCK///////////////////// */}
           <div onClick={(() => selectWeapon('Rock'))}>
             <RockWeapon />
+          </div>
+
+          <div onClick={() => selectWeapon('Spock')}>
+            <SpockWeapon />
+          </div>
+
+          <div onClick={() => selectWeapon('Lizard')}>
+            <LizardWeapon />
           </div>
 
         </div>
@@ -245,6 +278,11 @@ function App() {
               <PaperWeaponBig disabled={showPaper ? '' : 'hidden'} />
 
               <RockWeaponBig disabled={showRock ? '' : 'hidden'} />
+
+              <SpockWeaponBig disabled={showSpock ? '' : 'hidden'} />
+
+              <LizardWeaponBig disabled={showLizard ? '' : 'hidden'} />
+
               <div className='text-white absolute lg:hidden top-[150px] left-[10px] flex w-[150px] text-[18px] tracking-[2px]'>
                 YOU PICKED
               </div>
@@ -267,6 +305,11 @@ function App() {
                 <PaperWeaponBig disabled={showPaperComputer ? '' : 'hidden'} />
 
                 <RockWeaponBig disabled={showRockComputer ? '' : 'hidden'} />
+
+                <SpockWeaponBig disabled={showSpock ? '' : 'hidden'} />
+
+                <LizardWeaponBig disabled={showLizard ? '' : 'hidden'} />
+
                 <div className='text-white absolute lg:hidden top-[150px] left-[-20px] flex w-[200px] text-[18px] tracking-[2px]'>
                   THE HOUSE PICKED
                 </div>
@@ -300,6 +343,14 @@ function App() {
 
               <div className='absolute moving-elementL z-10 '>
                 <RockWeaponBig disabled={showRock ? '' : 'hidden'} />
+              </div>
+
+              <div className='absolute moving-elementL z-10 '>
+                <SpockWeaponBig disabled={showSpock ? '' : 'hidden'} />
+              </div>
+
+              <div className='absolute moving-elementL z-10 '>
+                <LizardWeaponBig disabled={showLizard ? '' : 'hidden'} />
               </div>
 
               <div className='text-white absolute lg:hidden top-[150px] left-[10px] flex w-[150px] text-[18px] tracking-[2px]'>
@@ -372,6 +423,13 @@ function App() {
                   <RockWeaponBig disabled={showRockComputer ? '' : 'hidden'} />
                 </div>
 
+                <div className='absolute moving-elementR z-10 '>
+                  <SpockWeaponBig disabled={showSpock ? '' : 'hidden'} />
+                </div>
+
+                <div className='absolute moving-elementR z-10 '>
+                  <LizardWeaponBig disabled={showLizard ? '' : 'hidden'} />
+                </div>
 
 
                 {/* /////////////////////////////AURA COMPPUTER////////////////////////// */}

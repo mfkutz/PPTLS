@@ -1,5 +1,5 @@
 import closeIcon from '../assets/images/icon-close.svg'
-import rulesImg from '../assets/images/image-rules.svg'
+import rulesImg from '../assets/images/image-rules-bonus.svg'
 
 
 const Rules = ({ rules, setRules }) => {

@@ -1,4 +1,4 @@
-import bgTriangle from '../assets/images/bg-triangle.svg'
+import bgTriangle from '../assets/images/bg-pentagon.svg'
 
 const TriangleBase = () => {
     return (
