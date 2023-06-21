@@ -112,7 +112,7 @@ function App() {
 
 
   function computerChoice() {
-    let choicePc = Math.floor(Math.random() * 3)
+    let choicePc = Math.floor(Math.random() * 5)
 
     if (choicePc === 0) {
       setShowPaperComputer(true)
@@ -120,6 +120,10 @@ function App() {
       setShowScissorsComputer(true)
     } else if (choicePc === 2) {
       setShowRockComputer(true)
+    } else if (choicePc === 3) {
+      setShowSpockComputer(true)
+    } else if (choicePc === 4) {
+      setShowLizardComputer(true)
     }
     console.log('computer elige', choicePc)
   }
@@ -306,9 +310,9 @@ function App() {
 
                 <RockWeaponBig disabled={showRockComputer ? '' : 'hidden'} />
 
-                <SpockWeaponBig disabled={showSpock ? '' : 'hidden'} />
+                <SpockWeaponBig disabled={showSpockComputer ? '' : 'hidden'} />
 
-                <LizardWeaponBig disabled={showLizard ? '' : 'hidden'} />
+                <LizardWeaponBig disabled={showLizardComputer ? '' : 'hidden'} />
 
                 <div className='text-white absolute lg:hidden top-[150px] left-[-20px] flex w-[200px] text-[18px] tracking-[2px]'>
                   THE HOUSE PICKED
@@ -424,11 +428,11 @@ function App() {
                 </div>
 
                 <div className='absolute moving-elementR z-10 '>
-                  <SpockWeaponBig disabled={showSpock ? '' : 'hidden'} />
+                  <SpockWeaponBig disabled={showSpockComputer ? '' : 'hidden'} />
                 </div>
 
                 <div className='absolute moving-elementR z-10 '>
-                  <LizardWeaponBig disabled={showLizard ? '' : 'hidden'} />
+                  <LizardWeaponBig disabled={showLizardComputer ? '' : 'hidden'} />
                 </div>
 
 
