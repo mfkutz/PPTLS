@@ -1,6 +1,6 @@
 import scissors from '../assets/images/icon-scissors.svg'
 
-const ScissorsWeaponBig = ({ left, disabled }) => {
+const ScissorsWeaponBig = ({ disabled }) => {
   return (
     <div className={`bg-ScissorsA flex rounded-full absolute lg:h-[294px] h-[130px] lg:w-[294px] w-[130px] justify-center items-center ${disabled}`}>
       <div className='bg-ScissorsB flex rounded-full absolute lg:h-[294px] h-[130px] lg:w-[294px] w-[130px] justify-center items-center -left-0 lg:-top-3 top-[-5px]'>

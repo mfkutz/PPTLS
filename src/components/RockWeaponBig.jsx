@@ -1,6 +1,6 @@
 import rock from '../assets/images/icon-rock.svg'
 
-const RockWeaponBig = ({ left, top, disabled }) => {
+const RockWeaponBig = ({ disabled }) => {
     return (
         <div className={`bg-RockA flex rounded-full absolute lg:h-[294px] h-[130px] lg:w-[294px] w-[130px] justify-center items-center ${disabled}`}>
             <div className='bg-RockB flex rounded-full absolute lg:h-[294px] h-[130px] lg:w-[294px] w-[130px] justify-center items-center -left-0 lg:-top-3 top-[-5px]'>

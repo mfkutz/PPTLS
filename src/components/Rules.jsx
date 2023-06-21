@@ -1,7 +1,6 @@
 import closeIcon from '../assets/images/icon-close.svg'
 import rulesImg from '../assets/images/image-rules-bonus.svg'
 
-
 const Rules = ({ rules, setRules }) => {
     return (
         <div className='flex justify-end px-12 pt-[5px] z-50 '>
